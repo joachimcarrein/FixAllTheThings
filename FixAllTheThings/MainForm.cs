@@ -69,9 +69,7 @@ namespace FixAllTheThings
 		{
 			this.Hide();
 			System.Threading.Thread.Sleep(200);
-			string current = WindowsIdentity.GetCurrent().Name;
-			string[] user_split = current.Split('\\');
-			takeScreenshot().Save(@"C:\Users\"+user_split[1]+@"\Desktop\screenshot.bmp");
+			takeScreenshot().Save(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)+@"\screenshot.bmp");
 			System.Threading.Thread.Sleep(200);
 			this.Show();
 		}
